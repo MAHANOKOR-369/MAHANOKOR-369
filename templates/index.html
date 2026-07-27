@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHANOKOR 369 - SUPREME COMMAND</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">
+
+    <div id="lockscreen" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 hidden">
+        <div class="text-center">
+            <h1 class="text-4xl text-teal-400 mb-4 font-bold uppercase">System Locked</h1>
+            <input type="password" id="masterkey" placeholder="Enter Master Key" class="bg-slate-900 border border-teal-500 p-2 text-center text-white rounded">
+            <button onclick="customtrigger('unlock_system')" class="mt-4 bg-teal-600 px-6 py-2 rounded text-white font-bold hover:bg-teal-500">UNLOCK</button>
+            <p id="lockerrormsg" class="text-red-500 mt-2 hidden">⚠️ លេខកូដសម្ងាត់មិនត្រឹមត្រូវ!</p>
+        </div>
+    </div>
+
+    <header class="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-900">
+        <div class="text-xl font-bold text-teal-400">MAHANOKOR 369 <span id="clock" class="text-xs ml-4 text-slate-400"></span></div>
+        <button onclick="customtrigger('quantum_voice')" class="bg-blue-600 px-4 py-1 text-sm rounded hover:bg-blue-500">🎙️ Voice Command</button>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+        <div class="col-span-2 bg-slate-900 border border-slate-800 p-4 rounded">
+            <h2 class="text-teal-400 mb-2 border-b border-slate-700 pb-1">MAP & RADAR</h2>
+            <div id="map" class="w-full h-[400px] rounded border border-slate-700 z-10"></div>
+            <div class="mt-4 flex gap-2">
+                <button onclick="customtrigger('scan_ocean')" class="bg-slate-800 px-3 py-1 rounded hover:bg-slate-700 text-sm">🌊 ស្កេនសមុទ្រ</button>
+                <button onclick="customtrigger('scan_border')" class="bg-slate-800 px-3 py-1 rounded hover:bg-slate-700 text-sm">🛡️ ស្កេនព្រំដែន</button>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded flex flex-col">
+            <h2 class="text-teal-400 mb-2 border-b border-slate-700 pb-1">CCTV FEED: <span id="cctvid" class="text-slate-300">cam-hq</span></h2>
+            <div class="flex-grow bg-black rounded border border-slate-700 relative overflow-hidden flex items-center justify-center">
+                <video id="cctvvideofeed" autoplay muted class="w-full h-auto opacity-80"></video>
+                <div class="absolute top-2 right-2 text-xs text-red-500 animate-pulse font-bold" id="cctvstatus">⏺ REC</div>
+                <div class="absolute bottom-2 left-2 text-xs text-white bg-black/50 px-2 py-1 rounded" id="cctvloctext">📍 Phnom Penh</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded">
+            <h2 class="text-teal-400 mb-2 border-b border-slate-700 pb-1">SYSTEM CONTROLS</h2>
+            <div class="grid grid-cols-2 gap-2 mt-2">
+                <button onclick="customtrigger('sigil_core')" class="bg-yellow-600/20 text-yellow-500 border border-yellow-600/50 p-2 rounded hover:bg-yellow-600/40">☀️ Almighty Core</button>
+                <button onclick="customtrigger('lock_system')" class="bg-red-900/40 text-red-400 border border-red-900 p-2 rounded hover:bg-red-900/60">🔒 Lock Matrix</button>
+                <button onclick="customtrigger('status_check')" class="bg-slate-800 p-2 rounded hover:bg-slate-700">⚡ Status Check</button>
+                <button onclick="customtrigger('auto_heal')" class="bg-cyan-900/40 text-cyan-400 border border-cyan-900 p-2 rounded hover:bg-cyan-900/60">♻️ Auto-Heal</button>
+            </div>
+            <div class="mt-4 text-xs text-slate-400" id="monitortext">Waiting for input...</div>
+        </div>
+
+        <div class="bg-black border border-slate-800 p-4 rounded font-mono text-xs overflow-hidden flex flex-col h-48">
+            <h2 class="text-teal-400 mb-2 border-b border-slate-700 pb-1 flex justify-between">
+                TERMINAL OUTPUT <button onclick="customtrigger('clear_logs')" class="text-slate-500 hover:text-white">Clear</button>
+            </h2>
+            <div id="logoutput" class="overflow-y-auto flex-grow text-slate-300 pr-2">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
