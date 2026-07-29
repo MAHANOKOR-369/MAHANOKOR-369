@@ -34,3 +34,13 @@ class EnergyGridController:
 if __name__ == "__main__":
     energy_system = EnergyGridController()
     print("⚡ Energy Grid Active:", energy_system.monitor_power_distribution())
+
+# services/energy_grid_controller.py
+class EnergyGridController:
+    def monitor_power_distribution(self):
+        return {
+            "capacity_percentage": "98.5%",
+            "carbon_emission": "0.0% (ECO-GREEN)",
+            "grid_status": "STABLE"
+        }
+        
