@@ -1,246 +1,90 @@
-/**
- * MAHANOKOR 369 | SUPREME COMMAND CENTER - ULTIMATE CYBERPUNK EDITION
- * Enhanced Core Stylesheet, Dynamic Glow, and High-Performance Animations
- */
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Kantumruy+Pro:wght@400;700&display=swap');
-
+/* MAHANOKOR 369 IMPERIAL STYLESHEET */
 :root {
-    --bg-dark: #020617;
-    --panel-bg: rgba(3, 7, 18, 0.9);
-    --border: #1e3a8a;
-    --cyan: #38bdf8;
-    --green: #22c55e;
-    --red: #ef4444;
-    --yellow: #f59e0b;
-    --white: #ffffff;
-    --neon-glow: 0 0 25px rgba(56, 189, 248, 0.4);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+    --bg-dark: #080c14;
+    --panel-bg: rgba(16, 24, 39, 0.85);
+    --neon-blue: #00f0ff;
+    --neon-green: #00ff66;
+    --neon-gold: #ffd700;
+    --neon-red: #ff3366;
+    --text-color: #e2e8f0;
 }
 
 body {
-    font-family: 'Fira Code', 'Kantumruy Pro', monospace;
-    background: var(--bg-dark);
-    color: var(--cyan);
-    overflow-x: hidden;
-    padding: 12px;
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: 'Consolas', 'Courier New', monospace, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: radial-gradient(circle at 50% 50%, #111a2e 0%, #080c14 100%);
+    min-height: 100vh;
 }
 
-::selection {
-    background: rgba(56, 189, 248, 0.4);
-    color: var(--white);
-}
-
-/* ផ្ទាំងបញ្ជា Cyber Panel កម្រិតខ្ពស់ ស្អាតដាច់គេ */
-.cyber-panel {
-    border: 1px solid var(--border);
+/* Glassmorphism Panel with Neon Border */
+.panel {
     background: var(--panel-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 14px;
-    box-shadow: var(--neon-glow);
-    animation: dangerGlow 2.5s ease-in-out infinite, pulseBorder 3.5s linear infinite;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cyber-panel:hover {
-    transform: translateY(-4px);
-    border-color: var(--cyan);
-    box-shadow: 
-        0 0 30px rgba(56, 189, 248, 0.6),
-        inset 0 0 15px rgba(56, 189, 248, 0.2);
-}
-
-/* ប៊ូតុងបញ្ជាអស្ចារ្យ ងាយស្រួលប៉ះលើ Touch Screen */
-button {
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: 700;
-    font-family: 'Fira Code', monospace;
-    transition: all 0.2s ease-in-out;
-    border: 1px solid var(--cyan);
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--cyan);
-    padding: 10px 16px;
-}
-
-button:hover {
-    transform: scale(1.03);
-    background: var(--cyan);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px var(--cyan);
-    filter: brightness(1.2);
-}
-
-button:active {
-    transform: scale(0.96);
-}
-
-/* ប្រអប់បញ្ចូលទិន្នន័យ (Input Control) */
-input {
-    outline: none;
-    background: #020617;
-    color: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px;
-    font-family: 'Fira Code', monospace;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 240, 255, 0.05);
     transition: all 0.3s ease;
 }
 
-input::placeholder {
-    color: #64748b;
+.panel:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
-input:focus {
-    border-color: var(--cyan);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+.glow-title {
+    color: var(--neon-gold);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    letter-spacing: 1.5px;
 }
 
-/* ប្រព័ន្ឋ Terminal Console */
-#terminal-console {
-    font-size: 11px;
-    line-height: 1.6;
-    font-family: "Fira Code", monospace;
-    background: #010409;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px dashed var(--border);
+/* Neon Buttons */
+.btn-neon {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    width: 100%;
 }
 
-/* របាររំកិលរលោងស្អាត */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+.btn-neon:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
 }
 
-::-webkit-scrollbar-track {
-    background: #030712;
+.btn-danger {
+    color: var(--neon-red);
+    border-color: var(--neon-red);
 }
 
-::-webkit-scrollbar-thumb {
-    background: #1e3a8a;
-    border-radius: 10px;
+.btn-danger:hover {
+    background: var(--neon-red);
+    color: #fff;
+    box-shadow: 0 0 15px var(--neon-red);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--cyan);
+/* Live Status Radar Blink Effect */
+.blink-dot {
+    height: 10px;
+    width: 10px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--neon-green);
+    animation: blinker 1.2s infinite;
 }
 
-/* ផែនទី និងវីដេអូ */
-#map {
-    min-height: 420px;
-    border-radius: 10px;
-    z-index: 10;
-    border: 1px solid var(--border);
+@keyframes blinker {
+    50% { opacity: 0.2; }
 }
-
-.leaflet-container {
-    background: #020617;
-}
-
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    background: #0f172a;
-    color: var(--white);
-    border: 1px solid var(--cyan);
-}
-
-video {
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-
-/* អក្សរពន្លឺ Cyber Glow */
-.text-glow-red {
-    text-shadow: 0 0 12px var(--red), 0 0 25px rgba(239, 68, 68, 0.6);
-}
-
-.text-glow-blue {
-    text-shadow: 0 0 12px var(--cyan), 0 0 25px rgba(56, 189, 248, 0.6);
-}
-
-/* Keyframes animations */
-@keyframes dangerGlow {
-    0% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.2); }
-    50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.5); }
-    100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.2); }
-}
-
-@keyframes pulseBorder {
-    0% { border-color: #1e3a8a; }
-    50% { border-color: #38bdf8; }
-    100% { border-color: #1e3a8a; }
-}
-
-/* Responsive Mobile Optimization */
-@media (max-width: 768px) {
-    body {
-        padding: 6px;
-    }
-
-    #map {
-        height: 320px;
-    }
-    
-    .cyber-panel {
-        padding: 12px;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 6px;
-    }
-
-    h1 {
-        font-size: 16px;
-    }
-}
-
-
-
-/* MAHANOKOR 369 - SUPREME CSS MATRIX */
-
-/* Custom Scrollbar សម្រាប់ Log Output */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #0f172a; 
-}
-::-webkit-scrollbar-thumb {
-    background: #06b6d4; 
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #0891b2; 
-}
-
-/* ពន្លឺ Glow Effect សម្រាប់បន្ទាត់ និងប៊ូតុង */
-.glow-border {
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
-}
-.glow-text {
-    text-shadow: 0 0 8px rgba(6, 182, 212, 0.8);
-}
-
-/* ចលនាព្រិចៗ (Pulse) របស់សញ្ញា CCTV និង GPS */
-@keyframes radar-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
-}
-.radar-active {
-    animation: radar-pulse 2s infinite;
-}
-
