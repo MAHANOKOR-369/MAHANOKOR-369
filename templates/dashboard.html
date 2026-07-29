@@ -1,91 +1,53 @@
-<b>capabilities</b></div>
-                    <div>signature: <span class="text-teal-400 font-bold">906 . 106 . 905 | 🔱</span></div>
-                    <div class="mt-2 text-center bg-red-950/30 border border-red-900 rounded p-1.5 text-[10px] text-red-400 font-bold">
-                        🛡️ 45-layer auto defense active
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHANOKOR 369 | COMMAND CENTER</title>
+    
+    <!-- Link Modular CSS (ស្រាល និងរហ័ស) -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/components.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+</head>
+<body>
+
+    <header class="glass-panel" style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+            <h2 class="glow-text">👑 MAHANOKOR 369</h2>
+            <small style="color:var(--neon-blue);">SUPREME REALM EXPRESS (PHASE 1 - 30)</small>
+        </div>
+        <div style="border: 1px solid var(--neon-gold); padding: 5px 15px; border-radius: 4px;">
+            <span class="glow-text">COMMANDER: KHOEM SOKSIVUTHA</span>
+        </div>
+    </header>
+
+    <div class="grid-matrix">
+        
+        <div class="glass-panel radar-scan">
+            <h3 style="color:var(--neon-blue);">🛡️ CORE SYSTEM <span class="status-dot"></span></h3>
+            <p id="sys-status" style="font-size:20px; font-weight:bold; color:var(--neon-green);">INITIALIZING...</p>
+            <input type="password" id="masterKeyInput" placeholder="Enter Master Key" style="width:90%; padding:10px; background:#000; border:1px solid var(--neon-blue); color:white; margin-bottom:10px;">
+            <button class="btn-command" onclick="executeOverride()">AUTHORIZE COMMAND</button>
+        </div>
+
+        <div class="glass-panel">
+            <h3 style="color:var(--neon-gold);">🛰️ GPS MATRIX <span class="status-dot"></span></h3>
+            <p id="gps-data" style="font-family:monospace; margin-top:20px;">Tracking Assets...</p>
+        </div>
+
+        <div class="glass-panel" style="grid-column: 1 / -1;">
+            <h3 style="color:var(--text-main);">💻 EMPIRE TERMINAL LOGS</h3>
+            <div id="terminal-logs" style="height: 150px; overflow-y: auto; font-family: monospace; font-size: 14px; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px; border: 1px solid #333;">
+                <span style="color:var(--neon-blue)">[SYSTEM]</span> Mahanokor 369 Core Initiated. Ready for commands.
             </div>
+        </div>
 
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-col gap-3">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">🌦️ weather radar scanner</div>
-                <div class="grid grid-cols-2 gap-2">
-                    <button onclick="customtrigger('scan_weather_level_1')" class="py-2 bg-slate-950 hover:bg-slate-800 text-[11px] text-slate-300 rounded-xl border border-slate-800">⛈️ កម្រិត ១</button>
-                    <button onclick="customtrigger('scan_weather_level_2')" class="py-2 bg-slate-950 hover:bg-slate-800 text-[11px] text-slate-300 rounded-xl border border-slate-800">🌀 កម្រិត ២</button>
-                </div>
-            </div>
+    </div>
 
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-col gap-3">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">📊 mahanokor revenue matrix</div>
-                <div class="w-full h-32 flex items-center justify-center">
-                    <canvas id="revenuechart"></canvas>
-                </div>
-            </div>
+    <!-- Link Modular JS (នៅខាងក្រោមដើម្បីកុំឱ្យទាក់ការ Load ក្រាហ្វិក) -->
+    <script src="/static/js/api_handler.js"></script>
+    <script src="/static/js/ui_controller.js"></script>
 
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 text-xs font-mono">
-                <div class="text-slate-300">🚘 <b>my car command detector</b></div>
-                <div class="text-[11px] text-slate-400 mt-1">
-                    • status: online & tracking | hq<br>
-                    • engine: armed & locked | power: 100%
-                </div>
-            </div>
-
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-col gap-2">
-                <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">🛡️ ម៉ាស៊ីនស្កេនមហាសកល</div>
-                <div class="flex flex-col gap-1.5 text-xs">
-                    <button onclick="customtrigger('scan_net')" class="py-2 px-3 bg-slate-950 border border-slate-800 rounded-lg text-slate-300">🌐 &gt; ស្កេនផ្លូវអ៊ីនធឺណិត</button>
-                    <button onclick="customtrigger('scan_cable')" class="py-2 px-3 bg-slate-950 border border-slate-800 rounded-lg text-slate-300">🔌 &gt; ស្កេនភ្លើងខ្សែកាប</button>
-                    <button onclick="customtrigger('scan_wireless')" class="py-2 px-3 bg-slate-950 border border-slate-800 rounded-lg text-slate-300">⚡ &gt; ស្កេនរលកសញ្ញាឥតខ្សែ</button>
-                    <button onclick="customtrigger('scan_power')" class="py-2 px-3 bg-slate-950 border border-slate-800 rounded-lg text-slate-300">💡 &gt; ស្កេនប្រព័ន្ធភ្លើង</button>
-                    <button onclick="customtrigger('scan_aerospace')" class="py-2 px-3 bg-slate-950 border border-slate-800 rounded-lg text-slate-300">🌌 &gt; ស្កេនលំហអាកាស</button>
-                    <button onclick="customtrigger('scan_dark')" class="py-2 px-3 bg-slate-950 border border-red-900 rounded-lg text-red-400 font-bold">👁️‍🗨️ &gt; ស្កេនពួកភ្លើងងងឹត</button>
-                </div>
-            </div>
-
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 grid grid-cols-2 gap-2 text-xs">
-                <button onclick="customtrigger('quantum_admin')" class="py-2 bg-slate-950 border border-slate-800 rounded-xl text-yellow-400 font-bold uppercase">🔐 admin</button>
-                <button onclick="customtrigger('quantum_voice')" class="py-2 bg-slate-950 border border-slate-800 rounded-xl text-cyan-400 font-bold uppercase">🎙️ voice</button>
-                <button onclick="customtrigger('quantum_init')" class="py-2 bg-slate-950 border border-slate-800 rounded-xl text-purple-400 font-bold uppercase">init core</button>
-                <button onclick="customtrigger('quantum_shield')" class="py-2 bg-slate-950 border border-slate-800 rounded-xl text-purple-400 font-bold uppercase">shield</button>
-            </div>
-
-            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-col gap-3">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">♻️ self-healing matrix status</div>
-                <div class="flex flex-col gap-3 text-[10px] font-mono">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-slate-400">🌾 botany system (agri)</span>
-                            <span id="healthagri" class="text-emerald-400 font-bold">100%</span>
-                        </div>
-                        <div class="bg-slate-950 h-1 rounded-full overflow-hidden">
-                            <div id="baragri" class="bg-emerald-500 h-1 transition-all" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-slate-400">🏥 healthcare module</span>
-                            <span id="healthhealth" class="text-emerald-400 font-bold">100%</span>
-                        </div>
-                        <div class="bg-slate-950 h-1 rounded-full overflow-hidden">
-                            <div id="barhealth" class="bg-emerald-500 h-1 transition-all" style="width: 100%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2 mt-2">
-                    <button onclick="customtrigger('simulate_fault')" class="py-2 bg-red-950/20 border border-red-900 text-red-300 text-[10px] rounded-lg">simulate fault</button>
-                    <button onclick="customtrigger('auto_heal')" class="py-2 bg-teal-950/40 border border-teal-800 text-teal-300 text-[10px] rounded-lg">activate heal</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="max-w-7xl w-full mx-auto mt-6 text-center text-xs text-slate-500 border-t border-slate-900 pt-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <p>© 2026 mahanokor matrix systems. zero-error dynamic architecture.</p>
-        <p class="text-teal-400">owner & creator: deity khoem soksivutha (signature: 906.106.905)</p>
-    </footer>
-
-    <!-- Socket.IO Integration for Real-time backend -->
-    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>
