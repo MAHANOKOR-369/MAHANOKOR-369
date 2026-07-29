@@ -22,3 +22,9 @@ class AIGovernanceEngine:
 gov_engine = AIGovernanceEngine()
 result = gov_engine.execute_ai_task("DEPLOY_GLOBAL_DRONE_NETWORK", 15, commander_auth=True)
 print(result)
+
+# core/ai_governance_engine.py
+class AIGovernanceEngine:
+    def __init__(self):
+        self.ai_status = "ONLINE - AUTONOMOUS GOVERNANCE ACTIVE"
+        
