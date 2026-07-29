@@ -2,6 +2,40 @@
 <html lang="km">
 <head>
     <meta charset="UTF-8">
+    <title>MAHANOKOR 369 - Supreme Command Dashboard</title>
+    <!-- ចងភ្ជាប់ CSS ទាំង ៤ ឯកសារដើម្បីសោភ័ណភាព -->
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/components.css">
+    <link rel="stylesheet" href="../static/css/animations.css">
+</head>
+</head>    
+<body> <head>   
+    <!-- របារបញ្ជាខាងលើ (Top Navigation) -->
+    <nav class="top-command-bar">
+        <h1>MAHANOKOR 369 | SUPREME COMMAND</h1>
+        <div class="menu-buttons">
+            <!-- ប៊ូតុងទាំង ៣ សម្រាប់ហៅប្លង់នីមួយៗមកបង្ហាញ -->
+            <button onclick="loadPanel('nature-panel')">១. ធម្មជាតិ & ថាមពល</button>
+            <button onclick="loadPanel('rescue-panel')">២. សង្គ្រោះមនុស្សធម៌</button>
+            <button onclick="loadPanel('infrastructure-panel')">៣. ហេដ្ឋារចនាសម្ព័ន្ធ</button>
+        </div>
+    </nav>
+
+    <!-- អេក្រង់យក្សកណ្តាលសម្រាប់បង្ហាញប្លង់មេ (Main Display Screen) -->
+    <main id="main-display-screen">
+        <!-- ទិន្នន័យពីប្លង់ទាំង ៣ នឹងត្រូវរុញមកបង្ហាញនៅទីនេះ -->
+        <h2 class="welcome-text">សូមជ្រើសរើសប្រព័ន្ធប្រតិបត្តិការ...</h2>
+    </main>
+
+    <!-- ចងភ្ជាប់ JS ទាំង ៣ ឯកសារដើម្បីឱ្យប្រព័ន្ធរស់រវើក -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/api_handler.js"></script>
+    <script src="../static/js/ui_controller.js"></script>
+</body>
+</html>
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAHANOKOR 369 | COMMAND CENTER</title>
     
