@@ -1,0 +1,25 @@
+:root {
+    --bg-deep-space: #050814;
+    --neon-blue: #00e5ff;
+    --neon-gold: #ffb703;
+    --neon-green: #00ff87;
+    --neon-red: #ff003c;
+    --glass-bg: rgba(10, 15, 30, 0.7);
+    --text-main: #e2e8f0;
+}
+
+body {
+    background: radial-gradient(circle at center, #0f172a 0%, var(--bg-deep-space) 100%);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
