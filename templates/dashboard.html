@@ -2,86 +2,74 @@
 <html lang="km">
 <head>
     <meta charset="UTF-8">
-    <title>MAHANOKOR 369 - Supreme Command Dashboard</title>
-    <!-- ចងភ្ជាប់ CSS ទាំង ៤ ឯកសារដើម្បីសោភ័ណភាព -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHANOKOR 369 | SUPREME COMMAND DASHBOARD</title>
+    
+    <!-- ចងភ្ជាប់ CSS ទាំង ៤ ឯកសារដើម្បីសោភ័ណភាព និងដំណើរការលឿន -->
     <link rel="stylesheet" href="../static/css/base.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/components.css">
     <link rel="stylesheet" href="../static/css/animations.css">
 </head>
-</head>    
-<body> <head>   
-    <!-- របារបញ្ជាខាងលើ (Top Navigation) -->
-    <nav class="top-command-bar">
-        <h1>MAHANOKOR 369 | SUPREME COMMAND</h1>
-        <div class="menu-buttons">
-            <!-- ប៊ូតុងទាំង ៣ សម្រាប់ហៅប្លង់នីមួយៗមកបង្ហាញ -->
-            <button onclick="loadPanel('nature-panel')">១. ធម្មជាតិ & ថាមពល</button>
-            <button onclick="loadPanel('rescue-panel')">២. សង្គ្រោះមនុស្សធម៌</button>
-            <button onclick="loadPanel('infrastructure-panel')">៣. ហេដ្ឋារចនាសម្ព័ន្ធ</button>
-        </div>
-    </nav>
-
-    <!-- អេក្រង់យក្សកណ្តាលសម្រាប់បង្ហាញប្លង់មេ (Main Display Screen) -->
-    <main id="main-display-screen">
-        <!-- ទិន្នន័យពីប្លង់ទាំង ៣ នឹងត្រូវរុញមកបង្ហាញនៅទីនេះ -->
-        <h2 class="welcome-text">សូមជ្រើសរើសប្រព័ន្ធប្រតិបត្តិការ...</h2>
-    </main>
-
-    <!-- ចងភ្ជាប់ JS ទាំង ៣ ឯកសារដើម្បីឱ្យប្រព័ន្ធរស់រវើក -->
-    <script src="../static/js/main.js"></script>
-    <script src="../static/js/api_handler.js"></script>
-    <script src="../static/js/ui_controller.js"></script>
-</body>
-</html>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAHANOKOR 369 | COMMAND CENTER</title>
-    
-    <!-- Link Modular CSS (ស្រាល និងរហ័ស) -->
-    <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/components.css">
-    <link rel="stylesheet" href="/static/css/animations.css">
-</head>
 <body>
 
-    <header class="glass-panel" style="display:flex; justify-content:space-between; align-items:center;">
+    <!-- បឋមកថា និង ព័ត៌មានមេបញ្ជាការកំពូល -->
+    <header class="glass-panel" style="display:flex; justify-content:space-between; align-items:center; padding: 15px;">
         <div>
             <h2 class="glow-text">👑 MAHANOKOR 369</h2>
             <small style="color:var(--neon-blue);">SUPREME REALM EXPRESS (PHASE 1 - 30)</small>
         </div>
         <div style="border: 1px solid var(--neon-gold); padding: 5px 15px; border-radius: 4px;">
-            <span class="glow-text">COMMANDER: KHOEM SOKSIVUTHA</span>
+            <span class="glow-text" style="font-weight: bold;">COMMANDER: KHOEM SOKSIVUTHA</span>
         </div>
     </header>
 
-    <div class="grid-matrix">
+    <!-- របារបញ្ជាហៅប្លង់មេទាំង ៣ មកបង្ហាញ -->
+    <nav class="top-command-bar" style="text-align: center; margin: 20px 0;">
+        <div class="menu-buttons">
+            <button class="btn-command" onclick="loadPanel('nature-panel')">១. ធម្មជាតិ & ថាមពល</button>
+            <button class="btn-command" onclick="loadPanel('rescue-panel')">២. សង្គ្រោះមនុស្សធម៌</button>
+            <button class="btn-command" onclick="loadPanel('infrastructure-panel')">៣. ហេដ្ឋារចនាសម្ព័ន្ធ</button>
+        </div>
+    </nav>
+
+    <!-- ប្រអប់ម៉ាទ្រីសបញ្ជា (Command Matrix) -->
+    <div class="grid-matrix" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px;">
         
-        <div class="glass-panel radar-scan">
+        <!-- ប្រព័ន្ធកូដសម្ងាត់ស្នូល -->
+        <div class="glass-panel radar-scan" style="padding: 20px;">
             <h3 style="color:var(--neon-blue);">🛡️ CORE SYSTEM <span class="status-dot"></span></h3>
             <p id="sys-status" style="font-size:20px; font-weight:bold; color:var(--neon-green);">INITIALIZING...</p>
             <input type="password" id="masterKeyInput" placeholder="Enter Master Key" style="width:90%; padding:10px; background:#000; border:1px solid var(--neon-blue); color:white; margin-bottom:10px;">
             <button class="btn-command" onclick="executeOverride()">AUTHORIZE COMMAND</button>
         </div>
 
-        <div class="glass-panel">
+        <!-- ប្រព័ន្ធ GPS ទ្រឹស្តី -->
+        <div class="glass-panel" style="padding: 20px;">
             <h3 style="color:var(--neon-gold);">🛰️ GPS MATRIX <span class="status-dot"></span></h3>
-            <p id="gps-data" style="font-family:monospace; margin-top:20px;">Tracking Assets...</p>
-        </div>
-
-        <div class="glass-panel" style="grid-column: 1 / -1;">
-            <h3 style="color:var(--text-main);">💻 EMPIRE TERMINAL LOGS</h3>
-            <div id="terminal-logs" style="height: 150px; overflow-y: auto; font-family: monospace; font-size: 14px; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px; border: 1px solid #333;">
-                <span style="color:var(--neon-blue)">[SYSTEM]</span> Mahanokor 369 Core Initiated. Ready for commands.
-            </div>
+            <p id="gps-data" style="font-family:monospace; margin-top:20px; color:var(--text-main);">Tracking Assets...</p>
         </div>
 
     </div>
 
-    <!-- Link Modular JS (នៅខាងក្រោមដើម្បីកុំឱ្យទាក់ការ Load ក្រាហ្វិក) -->
-    <script src="/static/js/api_handler.js"></script>
-    <script src="/static/js/ui_controller.js"></script>
+    <!-- អេក្រង់យក្សកណ្តាលសម្រាប់បង្ហាញប្លង់មេ ពេលចុចប៊ូតុងខាងលើ -->
+    <main id="main-display-screen" style="padding: 20px; border: 1px solid var(--neon-blue); margin: 15px; min-height: 300px; background: rgba(0, 15, 30, 0.7);">
+        <h2 class="welcome-text" style="text-align: center; color:var(--neon-blue);">សូមជ្រើសរើសប្រព័ន្ធប្រតិបត្តិការ...</h2>
+    </main>
+
+    <!-- កំណត់ហេតុប្រព័ន្ធ (Terminal Logs) -->
+    <div class="glass-panel" style="margin: 15px; padding: 20px; grid-column: 1 / -1;">
+        <h3 style="color:var(--text-main);">💻 EMPIRE TERMINAL LOGS</h3>
+        <div id="terminal-logs" style="height: 150px; overflow-y: auto; font-family: monospace; font-size: 14px; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 4px; border: 1px solid #333;">
+            <span style="color:var(--neon-blue)">[SYSTEM]</span> Mahanokor 369 Core Initiated. Ready for commands.<br>
+            <span style="color:var(--neon-gold)">[SECURITY]</span> Awaiting Commander Khoem Soksivutha authentication.
+        </div>
+    </div>
+
+    <!-- ចងភ្ជាប់ JS ទាំង ៣ ឯកសារ នៅផ្នែកខាងក្រោមដើម្បីកុំឱ្យទាក់ការ Load ក្រាហ្វិក -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/api_handler.js"></script>
+    <script src="../static/js/ui_controller.js"></script>
 
 </body>
 </html>
