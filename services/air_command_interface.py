@@ -30,3 +30,14 @@ class AirCommandInterface:
 if __name__ == "__main__":
     air_cmd = AirCommandInterface()
     print("✈️ Air Command Active:", air_cmd.deploy_aircraft_mission("AIRCRAFT-369-01"))
+
+# services/air_command_interface.py
+class AirCommandInterface:
+    def deploy_aircraft_mission(self, aircraft_id, mission):
+        return {
+            "status": "DEPLOYED",
+            "aircraft_id": aircraft_id,
+            "mission": mission,
+            "message": "Air defense grid successfully locked and activated."
+        }
+        
