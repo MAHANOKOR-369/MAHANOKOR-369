@@ -32,3 +32,12 @@ sec_system = ImperialSecurityMatrix()
 cmd = "ACTIVATE_PHASE_15_AIR_DEFENSE"
 auth_data = sec_system.generate_command_token(cmd)
 print("Generated Token:", auth_data)
+
+# core/mahanokor_security_matrix.py
+class ImperialSecurityMatrix:
+    def __init__(self):
+        self.defense_level = "MAXIMUM"
+        
+    def verify_encryption(self, key):
+        return key == "369"
+        
