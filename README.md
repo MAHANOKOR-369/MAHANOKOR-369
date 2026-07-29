@@ -88,3 +88,22 @@ MAHANOKOR-369/
 ├── app.py                          
 ├── requirements.txt                
 └── README.md                       
+
+mahanokor_empire_369/
+│
+├── app.py
+├── core/
+│   ├── __init__.py
+│   ├── mahanokor_core_system.py
+│   ├── mahanokor_security_matrix.py
+│   └── ai_governance_engine.py
+├── services/
+│   ├── __init__.py
+│   ├── gps_tracking_service.py
+│   ├── energy_grid_controller.py
+│   └── air_command_interface.py
+├── templates/
+│   └── dashboard.html
+└── static/
+    ├── css/ (base.css, style.css, components.css, animations.css)
+    └── js/ (main.js, api_handler.js, ui_controller.js)
