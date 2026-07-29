@@ -36,3 +36,13 @@ class MahanokorGPSEngine:
 if __name__ == "__main__":
     gps = MahanokorGPSEngine()
     print("🛰️ GPS Matrix Active:", gps.get_live_coordinates())
+
+# services/gps_tracking_service.py
+class MahanokorGPSEngine:
+    def get_live_coordinates(self, asset_id):
+        return {
+            "latitude": "11.5564",
+            "longitude": "104.9282",
+            "signal_strength": "100% SECURE"
+        }
+        
