@@ -64,46 +64,43 @@
 ---
 
 ## 📂 Repository Architecture (រចនាសម្ព័ន្ធគម្រោង)
-
-```text
 MAHANOKOR-369/
-├── core/
-│   ├── mahanokor_core_system.py    
-│   ├── mahanokor_security_matrix.py
-│   └── ai_governance_engine.py     
-├── services/
-│   ├── gps_tracking_service.py     
-│   ├── energy_grid_controller.py   
-│   └── air_command_interface.py    
-├── templates/
-│   └── index.html                  
-├── static/
-│   ├── css/
-│   │   ├── base.css
-│   │   ├── components.css
-│   │   └── animations.css
-│   └── js/
-│       ├── api_handler.js
-│       └── ui_controller.js
-├── app.py                          
-├── requirements.txt                
-└── README.md                       
-
-mahanokor_empire_369/
 │
-├── app.py
-├── core/
-│   ├── __init__.py
+├── 📂 core/                             # Python (AI Core & Governance)
 │   ├── mahanokor_core_system.py
 │   ├── mahanokor_security_matrix.py
-│   └── ai_governance_engine.py
-├── services/
-│   ├── __init__.py
-│   ├── gps_tracking_service.py
-│   ├── energy_grid_controller.py
-│   └── air_command_interface.py
-├── templates/
-│   └── dashboard.html
-└── static/
-    ├── css/ (base.css, style.css, components.css, animations.css)
-    └── js/ (main.js, api_handler.js, ui_controller.js)
+│   └── blueprint_manager.py
+│
+├── 📂 native_cpp/                       # ⚡ C++ (High-Performance Engine & Robotics)
+│   ├── include/
+│   │   └── telemetry_engine.hpp
+│   └── src/
+│       └── telemetry_engine.cpp        # កូដ C++ សម្រាប់ល្បឿន និង Robotics
+│
+├── 📂 dotnet_services/                  # 🔷 C# (.NET & Digital Twin 3D Simulation)
+│   ├── Mahanokor.csproj
+│   └── DigitalTwinEngine.cs            # កូដ C# សម្រាប់ប្រព័ន្ធពន្លត់ ឬទាក់ទង 3D/Enterprise
+│
+├── 📂 frontend_ts/                      # 🟦 TypeScript (Type-Safe Modern Web)
+│   ├── package.json
+│   └── src/
+│       ├── types/
+│       │   └── system_types.ts         # TypeScript Interfaces
+│       └── command_center.ts           # កូដ TypeScript សម្រាប់ UI
+│
+├── 📂 docs/                             # 📜 ឯកសារផ្លូវការ និងសញ្ញាបត្រមេបញ្ជាការ
+│   ├── 📂 credentials/                  # ថតសញ្ញាបត្រ និង Certificates
+│   │   ├── founder_profile.md          # ជីវប្រវត្តិ និងស្នាដៃរបស់មេបញ្ជាការ
+│   │   ├── diplomas_index.md           # បញ្ជីរាយនាមសញ្ញាបត្រទាំងអស់
+│   │   └── 📂 pdf_files/                # កន្លែងដាក់ Upload ឯកសារ PDF សញ្ញាបត្រផ្ទាល់
+│   └── architecture.md
+│
+├── 📂 services/                         # Python Microservices
+├── 📂 static/                           # Web Assets (CSS/JS)
+├── 📂 templates/                        # HTML Layouts
+│
+├── app.py
+├── mahanokor_engine.py
+├── mahanokor_phase28_30.json
+├── requirements.txt
+└── README.md
