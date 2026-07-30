@@ -1,0 +1,197 @@
+/* ==========================================================================
+   MAHANOKOR 369 - HIGH CONTRAST PROFESSIONAL COMMAND CENTER THEME
+   DESIGN CODE: M369-DARK-PRO-V3
+   ========================================================================== */
+
+/* 1. Root Variables for High-Contrast Color Palette */
+:root {
+  /* Surface & Background Colors */
+  --bg-deep-space: #070a0f;
+  --bg-card-surface: #0f172a;
+  --bg-card-hover: #1e293b;
+  --border-glow: #1e3a8a;
+  
+  /* High Contrast Typography Colors (អក្សរច្បាស់ខ្លាំង) */
+  --text-primary: #ffffff;          /* សសុទ្ធ ១០០% សម្រាប់ចំណងជើង */
+  --text-secondary: #e2e8f0;        /* ប្រផេះភ្លឺ សម្រាប់អក្សររៀបរាប់ */
+  --text-muted: #94a3b8;            /* ពណ៌សម្រាប់ Label និង Code */
+  
+  /* Neon Status Accents */
+  --accent-cyan: #00f0ff;           /* ពណ៌ Cyan សម្រាប់ AI & System B */
+  --accent-gold: #ffb700;           /* ពណ៌មាស សម្រាប់ Mahanokor Primary */
+  --accent-green: #00ff87;          /* ពណ៌បៃតង សម្រាប់ Online / Safe */
+  --accent-blue: #3b82f6;           /* ពណ៌ខៀវ សម្រាប់ Infrastructure */
+  --accent-danger: #ff0055;         /* ពណ៌ក្រហម សម្រាប់ Danger / Alert */
+  
+  /* Typography Fonts */
+  --font-main: 'Kantumruy Pro', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* 2. Global Reset & Body Styling */
+body {
+  background-color: var(--bg-deep-space);
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 24px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Header Container with Gold Glow */
+.command-header {
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(255, 183, 0, 0.15);
+}
+
+.command-header h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.command-header .badge-version {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-code);
+  font-weight: bold;
+}
+
+/* 4. Phase Dual-System Grid Layout */
+.phase-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* 5. System Card Styling (System A vs System B) */
+.system-card {
+  background: var(--bg-card-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.system-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.2);
+}
+
+.system-card.system-a {
+  border-left: 4px solid var(--accent-gold);
+}
+
+.system-card.system-b {
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.system-card .card-title {
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.system-card .card-category {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* 6. High Contrast Module List */
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.module-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.module-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* 7. Status Badges with Vibrant High Contrast Colors */
+.status-pill {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.status-pill.online {
+  background: rgba(0, 255, 135, 0.15);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+.status-pill.optimized {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+
+.status-pill.standby {
+  background: rgba(255, 183, 0, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+}
+
+.status-pill.processing {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+}
+
+/* 8. Terminal / Log Viewer Styling */
+.terminal-console {
+  background: #020408;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: var(--font-code);
+  color: var(--accent-green);
+  font-size: 0.9rem;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+    }
